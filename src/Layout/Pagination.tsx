@@ -30,14 +30,7 @@ const Pagination = () => {
           Next
         </button>
       </div>
-      {/* <select className="form-select" aria-label="Default select example">
-        <option selected>Open this select menu</option>
-        <option value="20">20</option>
-        <option value="50">50</option>
-        <option value="100">100</option>
-      </select> */}
     </React.Fragment>
-    
   );
 };
 

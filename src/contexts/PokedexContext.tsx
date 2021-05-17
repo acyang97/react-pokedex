@@ -1,6 +1,7 @@
 import React, { createContext, useState, useEffect } from "react";
 import { Pokemon } from "../interfaces/pokemon.interface";
 import axios from 'axios';
+
 type setValue = (value: any) => void;
 
 interface PokedexContextInterface {

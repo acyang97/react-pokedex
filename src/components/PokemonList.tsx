@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useEffect, useContext } from "react";
 import { Pokemon } from "../interfaces/pokemon.interface";
-import axios from "axios";
 import PokemonDetail from "./PokemonDetail";
 import { PokedexContext } from '../contexts/PokedexContext';
 
@@ -22,7 +21,7 @@ const PokemonList: React.FC = () => {
       <div className="row">
         {pokemonList.map((pokemon: Pokemon) => {
           return (
-            <div className="col-sm-3"  key={getKeyOfPokemon(pokemon)}>
+            <div className="col-sm-3 col-md-2" key={getKeyOfPokemon(pokemon)}>
               <div style={{padding: '0.4rem'}}>
                 <PokemonDetail
                   key={getKeyOfPokemon(pokemon)}
