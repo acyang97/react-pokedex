@@ -1,19 +1,35 @@
 import React, { useContext } from "react";
 import { PokedexContext } from "../contexts/PokedexContext";
+import { Form } from "react-bootstrap";
 
 const Pagination = () => {
-  const { viewPreviousPokemons, viewNextPokemons } = useContext(PokedexContext);
+  const { viewPreviousPokemons, viewNextPokemons, changeNumberPerPage } = useContext(PokedexContext);
 
-  const onClickViewNextPokemons = () => {
+  const onClickViewNextPokemons = async (): Promise<void> => {
     viewNextPokemons();
   };
 
-  const onClickViewPreviousPokemons = () => {
+  const onClickViewPreviousPokemons = async (): Promise<void> => {
     viewPreviousPokemons();
   };
 
+  const changeNumberOfPokemonPerPage = (event: React.ChangeEvent<HTMLSelectElement>): void => {
+    let numberPerPage: number = parseInt(event.target.value);
+    changeNumberPerPage(numberPerPage);
+  }
+
   return (
     <React.Fragment>
+      <Form.Control
+          as="select"
+          custom
+          onChange={changeNumberOfPokemonPerPage}
+        >
+          <option value="20">20</option>
+          <option value="30">30</option>
+          <option value="50">50</option>
+          <option value="100">100</option>
+        </Form.Control>
       <div>
         <button
           type="button"
